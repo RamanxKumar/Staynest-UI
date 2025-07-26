@@ -20,7 +20,8 @@ const Footer = () => {
 					</Col>
 					<Col md={6} className="text-center text-md-end">
 						<p className="mb-0 small text-muted">
-							&copy; {today.getFullYear()} Staynest Hotel. All rights reserved.
+							&copy; {today.getFullYear()} Staynest Hotel
+							<br/>All rights reserved<br/>(Raman Kumar)
 						</p>
 					</Col>
 				</Row>
