@@ -42,7 +42,7 @@ function App() {
 							<Route path="/login" element={<Login />} />
 							<Route path="/register" element={<Register/>} />
 							<Route path="/browse-all-rooms" element={<RoomListing />} />
-							<Route path="/find-booking" element={<FindBooking />} />
+							
 
 							{/* Room Management (Admin Only, optionally protected) */}
 							<Route path="/existing-rooms" element={<ExistingRooms />} />
@@ -85,6 +85,14 @@ function App() {
 								element={
 									<RequireAuth>
 										<BookingSuccess />
+									</RequireAuth>
+								}
+							/>
+							<Route
+								path="/find-booking"
+								element={
+									<RequireAuth>
+										<FindBooking/>
 									</RequireAuth>
 								}
 							/>

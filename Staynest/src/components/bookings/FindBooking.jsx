@@ -39,6 +39,9 @@ const FindBooking = () => {
     totalNumOfGuest: "",
   };
 
+  // const isLoggedIn = localStorage.getItem("token");
+  // const userRole = localStorage.getItem("userRole");
+
   const handleInputChange = (event) => {
     setConfirmationCode(event.target.value);
   };
@@ -171,8 +174,7 @@ const FindBooking = () => {
                     <strong>Children:</strong> {bookingInfo.numOfChildren}
                   </li>
                   <li className="list-group-item">
-                    <strong>Total Guests:</strong>{" "}
-                    {bookingInfo.totalNumOfGuest}
+                    <strong>Total Guests:</strong> {bookingInfo.totalNumOfGuest}
                   </li>
                 </ul>
 
