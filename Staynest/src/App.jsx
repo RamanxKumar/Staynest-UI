@@ -42,7 +42,6 @@ function App() {
 							<Route path="/login" element={<Login />} />
 							<Route path="/register" element={<Register/>} />
 							<Route path="/browse-all-rooms" element={<RoomListing />} />
-							<Route path="/booking-success" element={<BookingSuccess />} />
 							<Route path="/find-booking" element={<FindBooking />} />
 
 							{/* Room Management (Admin Only, optionally protected) */}
@@ -62,7 +61,14 @@ function App() {
 							<Route path="/existing-bookings" element={<Bookings />} />
 
 							{/* Admin */}
-							<Route path="/admin" element={<Admin />} />
+							<Route
+								path="/admin"
+								element={
+									<RequireAuth>
+										<Admin />
+									</RequireAuth>
+								}
+							/>
 
 							{/* Authenticated User */}
 							<Route
@@ -70,6 +76,15 @@ function App() {
 								element={
 									<RequireAuth>
 										<Profile />
+									</RequireAuth>
+								}
+							/>
+
+							<Route
+								path="/booking-success"
+								element={
+									<RequireAuth>
+										<BookingSuccess />
 									</RequireAuth>
 								}
 							/>

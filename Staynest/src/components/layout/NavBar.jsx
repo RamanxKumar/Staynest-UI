@@ -128,7 +128,7 @@ const NavBar = () => {
                   <Logout />
                 ) : (
                   <li>
-                    <Link className="dropdown-item fw-semibold" to="/login">
+                    <Link className={`dropdown-item ${darkMode ? "text-light" : "text-primary"} fw-semibold`} to="/login">
                       Login
                     </Link>
                   </li>

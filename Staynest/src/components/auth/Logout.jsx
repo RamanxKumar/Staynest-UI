@@ -1,10 +1,25 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "./AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 
 const Logout = () => {
 	const auth = useContext(AuthContext);
 	const navigate = useNavigate();
+
+	  // ✅ Dark Mode State
+	  const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") === "true");
+	
+	  const toggleDarkMode = () => {
+		setDarkMode((prev) => {
+		  const newMode = !prev;
+		  localStorage.setItem("darkMode", newMode);
+		  return newMode;
+		});
+	  };
+	
+	  useEffect(() => {
+		document.body.classList.toggle("dark-mode", darkMode);
+	  }, [darkMode]);
 
 	const handleLogout = () => {
 		auth.handleLogout();
@@ -24,7 +39,7 @@ const Logout = () => {
 					className="dropdown-item d-flex align-items-center"
 					aria-label="Go to profile"
 				>
-					<i className="bi bi-person-circle me-2"></i>
+					<i className={`bi bi-person-circle ${darkMode ? "text-white" : "text-dark"} me-2`}></i>
 					<span>Profile</span>
 				</Link>
 			</li>
