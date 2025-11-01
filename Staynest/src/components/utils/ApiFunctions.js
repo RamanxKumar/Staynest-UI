@@ -6,7 +6,7 @@ import axios from "axios"
 //backend deploy wala url idhar daalo
 export const api= axios.create(
     {
-        baseURL : "http://13.200.66.111:9199" 
+        baseURL : "http://localhost:8080" 
     }
 )
 
