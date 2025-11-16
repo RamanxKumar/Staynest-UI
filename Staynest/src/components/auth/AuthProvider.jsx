@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext } from "react"
-import { jwtDecode } from "jwt-decode" // ✅ FIX: named import
+import { jwtDecode } from "jwt-decode" 
 
 // Create context with default structure
 export const AuthContext = createContext({
